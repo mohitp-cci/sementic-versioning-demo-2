@@ -1,19 +1,17 @@
 language: node_js
+
 node_js:
   - "12"
-os:
-  - linux
-  - osx
 
-script:
-  - npm install
-
-env:
-  - BUILD_LEADER_ID=7
 jobs:
   include:
+    # Define the release stage that runs semantic-release
     - stage: release
-      node_js: 12
-      os: linux
-      after_success:
-        - npm run semantic-release
+      node_js: lts/*
+      # Advanced: optionally overwrite your default `script` step to skip the tests
+      # script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
