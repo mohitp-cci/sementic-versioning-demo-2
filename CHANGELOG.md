@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v1.0.2...v2.0.0) (2021-01-11)
+
+
+### Features
+
+* JIRA-1234 Implements Widget ABC ([f10e094](https://github.com/mohitp-cci/sementic-versioning-demo-2/commit/f10e094c26ec2dfba295c1aa03c321a4bc026af2))
+
 ## [1.1.0](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v1.0.2...v1.1.0) (2021-01-11)
 
 
