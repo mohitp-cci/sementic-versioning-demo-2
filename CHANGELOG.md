@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-1](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v0.0.1-0...v0.0.1-1) (2021-01-11)
+
+
+### Features
+
+* added sementic version support ([9be3cc4](https://github.com/mohitp-cci/sementic-versioning-demo-2/commit/9be3cc4671863ea51c9ec3ba5437df84bce613b0))
+
 ### [0.0.1-0](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v1.1.0...v0.0.1-0) (2021-01-11)
 
 
