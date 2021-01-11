@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v0.0.2...v0.0.3) (2021-01-11)
+
+
+### Features
+
+* added express support ([0bab17b](https://github.com/mohitp-cci/sementic-versioning-demo-2/commit/0bab17b9dcce6f1d63d61a6e00d82038c593235f))
+
 ### [0.0.2](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v0.0.1...v0.0.2) (2021-01-11)
 
 
