@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v2.0.0...v2.1.0) (2021-01-11)
+
+
+### Features
+
+* added new feature ([663b181](https://github.com/mohitp-cci/sementic-versioning-demo-2/commit/663b1817b026fefa52e5075acb915ea58d23a39c))
+
+
+### Bug Fixes
+
+* fixed issue1 ([6ed20bc](https://github.com/mohitp-cci/sementic-versioning-demo-2/commit/6ed20bcf82d06a2eb853d5e0a30bf52546111d99))
+* issue2 ([2dee12c](https://github.com/mohitp-cci/sementic-versioning-demo-2/commit/2dee12cb302bca348a43f9b0368e39b113cab5b0))
+
 ## [2.0.0](https://github.com/mohitp-cci/sementic-versioning-demo-2/compare/v1.0.2...v2.0.0) (2021-01-11)
 
 
