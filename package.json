@@ -12,6 +12,26 @@
     "type": "git",
     "url": "https://github.com/mohitp-cci/sementic-versioning-demo-2.git"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "never",
+        [
+          "start-case",
+          "pascal-case"
+        ]
+      ]
+    }
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,6 +39,9 @@
   },
   "homepage": "https://github.com/mohitp-cci/sementic-versioning-demo-2#readme",
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "husky": "^4.3.7",
     "semantic-release": "^17.3.1",
     "standard-version": "^9.1.0"
   }
