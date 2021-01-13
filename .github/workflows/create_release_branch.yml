@@ -56,7 +56,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.git-actions-token }}
-          branch: release/v${{ github.event.inputs.versionName }}
+          branch: master
           committer: mohit.palyekar@creativecapsule.com
           author: mohit.palyekar@creativecapsule.com
           base: develop
