@@ -51,7 +51,6 @@ jobs:
       #       Hi!
       #       This PR was created in response workflow running.
       #       I've updated the version name and code commit: ${{ steps.make-commit.outputs.commit }}.
-      - uses: actions/checkout@v2
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
@@ -63,7 +62,7 @@ jobs:
           signoff: false
           branch: release/v${{ github.event.inputs.versionName }}
           base: develop
-          delete-branch: true
+          delete-branch: false
           title: "[Example] Update report"
           body: |
             Update report
