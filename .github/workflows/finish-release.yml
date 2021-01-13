@@ -54,9 +54,8 @@ jobs:
       - name: Create pull request for master branch
         uses: repo-sync/pull-request@v2
         with:
-          id: open-pr
+          id: open-master-pr
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: ${{ github.event.inputs.message }}
           source_branch: release/v${{ github.event.inputs.versionName }}
           destination_branch: master
           pr_title: v${{ github.event.inputs.versionName }} into master
@@ -71,9 +70,8 @@ jobs:
       - name: Create Pull Request for develop
         uses: repo-sync/pull-request@v2
         with:
-          id: open-pr
+          id: open-develop-pr
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: ${{ github.event.inputs.message }}
           source_branch: release/v${{ github.event.inputs.versionName }}
           destination_branch: develop
           pr_title: v${{ github.event.inputs.versionName }} into develop
