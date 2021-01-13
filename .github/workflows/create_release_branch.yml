@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-          
+
       - name: Create release branch
         run: git checkout -b release/v${{ github.event.inputs.versionName }}
       - name: Initialize mandatory git config
@@ -58,7 +58,7 @@ jobs:
           branch: release/v${{ github.event.inputs.versionName }}
           committer: mohit.palyekar@creativecapsule.com
           author: mohit.palyekar@creativecapsule.com
-          base: develop
+          base: origin/develop
           title: v${{ github.event.inputs.versionName }} into develop
           reviewers: ${{ github.event.issue.user.login }}
           body: |
