@@ -24,6 +24,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      #bug fix in release
       # - name: Create release branch
       #   run: git checkout -b release/v${{ github.event.inputs.versionName }}
 
