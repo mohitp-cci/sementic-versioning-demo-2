@@ -46,7 +46,7 @@ jobs:
       # - uses: actions/checkout@v2
       - name: Create release
         run: |
-          git checkout -b v${{ github.event.inputs.versionName }} develop
+          git checkout -b release/v${{ github.event.inputs.versionName }} develop
           git push origin release/v${{ github.event.inputs.versionName }}
           
       # - name: Push new branch
