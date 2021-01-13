@@ -37,11 +37,11 @@ jobs:
       #     echo "::set-output name=commit::$(git rev-parse HEAD)"
       - name: Push new branch
         run: git push origin release/v${{ github.event.inputs.versionName }}
-      - name: Create pull request into main
-        uses: peter-evans/create-pull-request@v3
+      - name: Create pull request into master
+        uses: thomaseizinger/create-pull-request@1.0.0
         with:
-          token: ${{ secrets.sementic-versioning }}
-          branch: release/v${{ github.event.inputs.versionName }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          head: release/v${{ github.event.inputs.versionName }}
           base: master
           title: v${{ github.event.inputs.versionName }} into master
           reviewers: ${{ github.event.issue.user.login }}
@@ -50,9 +50,9 @@ jobs:
             This PR was created in response workflow running.
             I've updated the version name and code commit: ${{ steps.make-commit.outputs.commit }}.
       - name: Create pull request to develop
-        uses: peter-evans/create-pull-request@v3
+        uses: thomaseizinger/create-pull-request@1.0.0
         with:
-          token: ${{ secrets.sementic-versioning }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           head: release/v${{ github.event.inputs.versionName }}
           base: develop
           title: v${{ github.event.inputs.versionName }} into develop
