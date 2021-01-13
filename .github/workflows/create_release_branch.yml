@@ -40,7 +40,7 @@ jobs:
       - name: Create pull request into master
         uses: thomaseizinger/create-pull-request@1.0.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.sementic-versioning }}
           head: release/v${{ github.event.inputs.versionName }}
           base: master
           title: v${{ github.event.inputs.versionName }} into master
@@ -52,7 +52,7 @@ jobs:
       - name: Create pull request to develop
         uses: thomaseizinger/create-pull-request@1.0.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.sementic-versioning }}
           head: release/v${{ github.event.inputs.versionName }}
           base: develop
           title: v${{ github.event.inputs.versionName }} into develop
