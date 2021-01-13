@@ -29,12 +29,13 @@ jobs:
         # uses: thomaseizinger/keep-a-changelog-new-release@v1
         # with:
         #   version: ${{ github.event.inputs.versionName }}
-      # - name: Commit changelog and manifest files
-      #   id: make-commit
-      #   run: |
-      #     git add CHANGELOG.md
-      #     git commit --message "Prepare release ${{ github.event.inputs.versionName }}"
-      #     echo "::set-output name=commit::$(git rev-parse HEAD)"
+      - name: Commit changelog
+        id: make-commit
+        run: |
+          git add CHANGELOG.md
+          git commit --message "Prepare release ${{ github.event.inputs.versionName }}"
+          echo "${{ steps.changelog.outputs.changelog }}"
+          
       - name: Push new branch
         run: git push origin release/v${{ github.event.inputs.versionName }}
       # - name: Create pull request into master
@@ -54,7 +55,9 @@ jobs:
         with:
           token: ${{ secrets.sementic-versioning }}
           branch: release/v${{ github.event.inputs.versionName }}
-          base: develop
+          committer: mohit.palyekar@creativecapsule.com
+          author: mohit.palyekar@creativecapsule.com
+          # base: develop
           title: v${{ github.event.inputs.versionName }} into develop
           reviewers: ${{ github.event.issue.user.login }}
           body: |
