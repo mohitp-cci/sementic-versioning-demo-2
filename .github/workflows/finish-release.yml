@@ -17,7 +17,7 @@ on:
         required: true
 
 jobs:
-  createrelease:
+  finishrelease:
     runs-on: ubuntu-latest
 
     steps:
