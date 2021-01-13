@@ -64,6 +64,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Add report file
+          branch: release/v${{ github.event.inputs.versionName }}
           base: develop
           title: '[Example] Add report file'
           body: >
