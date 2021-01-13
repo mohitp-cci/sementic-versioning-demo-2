@@ -55,7 +55,7 @@ jobs:
           branch: release/v${{ github.event.inputs.versionName }}
           committer: mohit.palyekar@creativecapsule.com
           author: mohit.palyekar@creativecapsule.com
-          # base: develop
+          base: develop
           title: v${{ github.event.inputs.versionName }} into develop
           reviewers: ${{ github.event.issue.user.login }}
           body: |
