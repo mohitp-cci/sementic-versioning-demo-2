@@ -1,20 +1,11 @@
 name: Finish Release
 on:
-  # push:
-  #   branches:
-  #     - master
-
   workflow_dispatch:
     inputs:
       versionName:
         description: "Name of the release"
         required: true
         default: 1.0.0
-
-      message:
-        default: "chore: some test message"
-        description: "commit message"
-        required: true
 
 jobs:
   finishrelease:
@@ -23,9 +14,6 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-
-      # - name: Create release branch
-      #   run: git checkout -b release/v${{ github.event.inputs.versionName }}
 
       - name: Initialize mandatory git config
         run: |
@@ -46,9 +34,6 @@ jobs:
       #     git commit --message "Prepare release ${{ github.event.inputs.versionName }}"
       #     echo "::set-output name=commit::$(git rev-parse HEAD)"
 
-      # - name: Push new branch
-      #   run: git push origin release/v${{ github.event.inputs.versionName }}
-
       - uses: actions/checkout@v2
 
       - name: Create pull request for master branch
@@ -59,8 +44,8 @@ jobs:
           source_branch: release/v${{ github.event.inputs.versionName }}
           destination_branch: master
           pr_title: v${{ github.event.inputs.versionName }} into master
-          pr_body: >
-            This PR is auto-generated. This PR will merge release/v${{ github.event.inputs.versionName }} changes in to master branch.
+          pr_body: |
+            ${{ steps.Changelog.outputs.changelog }}
           pr_label: "automated pr"
       - name: output-url
         run: echo ${{steps.open-pr.outputs.pr_url}}
@@ -75,8 +60,8 @@ jobs:
           source_branch: release/v${{ github.event.inputs.versionName }}
           destination_branch: develop
           pr_title: v${{ github.event.inputs.versionName }} into develop
-          pr_body: >
-            This PR is auto-generated. This PR will merge release/v${{ github.event.inputs.versionName }} changes in to develop branch.
+          pr_body: |
+            ${{ steps.Changelog.outputs.changelog }}
           pr_label: "automated pr"
       - name: output-url
         run: echo ${{steps.open-pr.outputs.pr_url}}
