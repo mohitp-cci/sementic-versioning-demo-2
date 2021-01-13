@@ -51,7 +51,7 @@ jobs:
       - name: Create pull request to develop
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.sementic-versioning }}
+          token: ${{ secrets.git-actions-token }}
           branch: release/v${{ github.event.inputs.versionName }}
           committer: mohit.palyekar@creativecapsule.com
           author: mohit.palyekar@creativecapsule.com
