@@ -56,6 +56,8 @@ jobs:
       #       I've updated the version name and code commit: ${{ steps.make-commit.outputs.commit }}.
       - name: Create pull request to develop
         uses: thomaseizinger/create-pull-request@1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.git-actions-token }}
         with:
           github-token: ${{ secrets.git-actions-token }}
           head: release/v${{ github.event.inputs.versionName }}
