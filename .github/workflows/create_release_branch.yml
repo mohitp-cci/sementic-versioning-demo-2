@@ -52,16 +52,23 @@ jobs:
       #       This PR was created in response workflow running.
       #       I've updated the version name and code commit: ${{ steps.make-commit.outputs.commit }}.
       - name: Create pull request to develop
+        id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.git-actions-token }}
-          branch: develop
+          branch: release/v${{ github.event.inputs.versionName }}
           committer: mohit.palyekar@creativecapsule.com
           author: mohit.palyekar@creativecapsule.com
-          base: release/v${{ github.event.inputs.versionName }}
+          base: develop
           title: v${{ github.event.inputs.versionName }} into develop
-          reviewers: ${{ github.event.issue.user.login }}
+          reviewers: mohit.palyekar@creativecapsule.com
+          labels: |
+            automated pr
           body: |
             Hi!
             This PR was created in response workflow running.
-            I've updated the version name and code commit: ${{ steps.make-commit.outputs.commit }}.
+
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
