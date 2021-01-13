@@ -37,23 +37,23 @@ jobs:
       #     echo "::set-output name=commit::$(git rev-parse HEAD)"
       - name: Push new branch
         run: git push origin release/v${{ github.event.inputs.versionName }}
-      - name: Create pull request into master
-        uses: thomaseizinger/create-pull-request@1.0.0
-        with:
-          github-token: ${{ secrets.sementic-versioning }}
-          head: release/v${{ github.event.inputs.versionName }}
-          base: master
-          title: v${{ github.event.inputs.versionName }} into master
-          reviewers: ${{ github.event.issue.user.login }}
-          body: |
-            Hi!
-            This PR was created in response workflow running.
-            I've updated the version name and code commit: ${{ steps.make-commit.outputs.commit }}.
+      # - name: Create pull request into master
+      #   uses: peter-evans/create-pull-request@v3
+      #   with:
+      #     token: ${{ secrets.sementic-versioning }}
+      #     branch: release/v${{ github.event.inputs.versionName }}
+      #     base: master
+      #     title: v${{ github.event.inputs.versionName }} into master
+      #     reviewers: ${{ github.event.issue.user.login }}
+      #     body: |
+      #       Hi!
+      #       This PR was created in response workflow running.
+      #       I've updated the version name and code commit: ${{ steps.make-commit.outputs.commit }}.
       - name: Create pull request to develop
-        uses: thomaseizinger/create-pull-request@1.0.0
+        uses: peter-evans/create-pull-request@v3
         with:
-          github-token: ${{ secrets.sementic-versioning }}
-          head: release/v${{ github.event.inputs.versionName }}
+          token: ${{ secrets.sementic-versioning }}
+          branch: release/v${{ github.event.inputs.versionName }}
           base: develop
           title: v${{ github.event.inputs.versionName }} into develop
           reviewers: ${{ github.event.issue.user.login }}
