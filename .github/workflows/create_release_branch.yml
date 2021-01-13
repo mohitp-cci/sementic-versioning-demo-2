@@ -61,7 +61,8 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: example-patches
+          branch: release/v${{ github.event.inputs.versionName }}
+          base: develop
           delete-branch: true
           title: "[Example] Update report"
           body: |
