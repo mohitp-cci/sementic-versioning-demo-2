@@ -55,10 +55,10 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.git-actions-token }}
-          branch: release/v${{ github.event.inputs.versionName }}
+          branch: develop
           committer: mohit.palyekar@creativecapsule.com
           author: mohit.palyekar@creativecapsule.com
-          base: origin/develop
+          base: release/v${{ github.event.inputs.versionName }}
           title: v${{ github.event.inputs.versionName }} into develop
           reviewers: ${{ github.event.issue.user.login }}
           body: |
