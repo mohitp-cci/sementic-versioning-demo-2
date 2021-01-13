@@ -37,8 +37,8 @@ jobs:
       - name: Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
-        # run: echo "::set-output name=commit::$(git rev-parse HEAD)"
 
+        # run: echo "::set-output name=commit::$(git rev-parse HEAD)"
       # - name: Commit changelog and manifest files
       #   id: make-commit
       #   run: |
@@ -49,7 +49,7 @@ jobs:
       # - name: Push new branch
       #   run: git push origin release/v${{ github.event.inputs.versionName }}
 
-      # - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Create Pull Request for master
         uses: peter-evans/create-pull-request@v3
         with:
