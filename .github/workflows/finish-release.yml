@@ -19,9 +19,7 @@ jobs:
         run: |
           git config user.name "Mohit Palyekar"
           git config user.email mohit.palyekar@creativecapsule.com
-      # - name: Change version number and name
-      #   run: printf 'ext.version_code = ${{ github.event.inputs.versionCode }}\next.version_name = "${{ github.event.inputs.versionName }}"\n' > app_versions.gradle
-
+   
       - name: Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
